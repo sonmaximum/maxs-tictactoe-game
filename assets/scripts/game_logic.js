@@ -1,7 +1,5 @@
 'use strict'
 
-const o = 'o'
-const x = 'x'
 const gameboard =
   [
     '', '', '',
@@ -15,9 +13,9 @@ let xturn = true
 const takeTurn = function (index) {
   if (gameboard[index] === '') {
     if (xturn) {
-      gameboard[index] = x
+      gameboard[index] = 'x'
     } else {
-      gameboard[index] = o
+      gameboard[index] = 'o'
     }
     xturn = !xturn
   }
