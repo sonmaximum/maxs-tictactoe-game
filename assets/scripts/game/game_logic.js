@@ -62,28 +62,34 @@ const boardFull = function () {
 }
 const o = 'o'
 const x = 'x'
-let xturn = true
-let over = false
+const checks = {
+  xturn: true,
+  over: false
+}
 const takeTurn = function (index) {
-  if (over) {
+  if (checks.over) {
+    console.log('Game is over!')
     return 'Game is over!'
   }
   if (gameboard[index] === '') {
-    if (xturn) {
+    if (checks.xturn) {
       gameboard[index] = x
     } else {
       gameboard[index] = o
     }
-    xturn = !xturn
+    checks.xturn = !checks.xturn
   }
   if (checkForWinX()) {
-    over = true
+    checks.over = true
+    console.log('X wins!')
     return 'X wins!'
   } else if (checkForWinO()) {
-    over = true
+    checks.over = true
+    console.log('X wins!')
     return 'O wins!'
   } else if (boardFull()) {
-    over = true
+    checks.over = true
+    console.log('Draw!')
     return 'Draw!'
   }
   console.log(gameboard[0], '|', gameboard[1], '|', gameboard[2])
@@ -93,5 +99,11 @@ const takeTurn = function (index) {
 }
 
 module.exports = {
-  takeTurn
+  takeTurn,
+  x,
+  o,
+  checks,
+  emptygameboard,
+  fullgameboard,
+  testgameboard
 }
