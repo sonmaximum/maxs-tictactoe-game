@@ -1,5 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Righteous');
 
 $black: #000;
 $white: #fff;
@@ -19,4 +20,17 @@ $white: #fff;
 
 .board>div {
   background-color: $white;
+  font-family: 'Righteous', cursive;
+  font-size: 200px;
+  line-height: 120px;
+  text-align: center;
+  vertical-align: text-top;
+}
+
+.red-o {
+  color: darken(red, 5%);
+}
+
+.blue-x {
+  color: darken(blue, 5%);
 }
