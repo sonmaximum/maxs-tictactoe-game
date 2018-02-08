@@ -1,5 +1,12 @@
 'use strict'
 
+const emptygameboard =
+  [
+    '', '', '',
+    '', '', '',
+    '', '', ''
+  ]
+
 const gameboard =
   [
     '', '', '',
@@ -57,16 +64,18 @@ const boardFull = function () {
 let xturn = true
 let over = false
 const takeTurn = function (index) {
-  if (!over) {
-    if (gameboard[index] === '') {
-      if (xturn) {
-        gameboard[index] = 'x'
-      } else {
-        gameboard[index] = 'o'
-      }
-      xturn = !xturn
+  if (over) {
+    return 'Game is over!'
+  }
+  if (gameboard[index] === '') {
+    if (xturn) {
+      gameboard[index] = 'x'
+    } else {
+      gameboard[index] = 'o'
     }
-  } if (checkForWinX()) {
+    xturn = !xturn
+  }
+  if (checkForWinX()) {
     over = true
     return 'X wins!'
   } else if (checkForWinO()) {
