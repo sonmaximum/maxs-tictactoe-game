@@ -2,6 +2,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 $black: #000;
+$white: #fff;
 
 .logout-form {
   display: inline;
@@ -17,5 +18,5 @@ $black: #000;
 }
 
 .board>div {
-  background-color: white;
+  background-color: $white;
 }
