@@ -5,6 +5,8 @@ const config = require('./config')
 
 $(() => {
   setAPIOrigin(location, config)
+  console.log('running')
+  $(document).on('click', () => console.log('hello'))
 })
 
 // use require with a reference to bundle the file and use it in this file
