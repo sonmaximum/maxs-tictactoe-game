@@ -43,10 +43,10 @@ const winConditions =
   ]
 
 const checkThreeForWinX = function ([a, b, c]) {
-  return (gameboard[a] === 'x' && gameboard[b] === 'x' && gameboard[c] === 'x')
+  return (gameboard[a] === x && gameboard[b] === x && gameboard[c] === x)
 }
 const checkThreeForWinO = function ([a, b, c]) {
-  return (gameboard[a] === 'o' && gameboard[b] === 'o' && gameboard[c] === 'o')
+  return (gameboard[a] === o && gameboard[b] === o && gameboard[c] === o)
 }
 
 const checkForWinX = function () {
@@ -60,7 +60,8 @@ const checkForWinO = function () {
 const boardFull = function () {
   return gameboard.every(elem => elem)
 }
-
+const o = 'o'
+const x = 'x'
 let xturn = true
 let over = false
 const takeTurn = function (index) {
@@ -69,9 +70,9 @@ const takeTurn = function (index) {
   }
   if (gameboard[index] === '') {
     if (xturn) {
-      gameboard[index] = 'x'
+      gameboard[index] = x
     } else {
-      gameboard[index] = 'o'
+      gameboard[index] = o
     }
     xturn = !xturn
   }
@@ -92,8 +93,5 @@ const takeTurn = function (index) {
 }
 
 module.exports = {
-  takeTurn,
-  winConditions,
-  checkForWinX,
-  checkForWinO
+  takeTurn
 }
