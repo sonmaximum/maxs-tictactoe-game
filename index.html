@@ -27,18 +27,29 @@
       </button>
 
       <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-sm" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">Modal title</h4>
+              <h4 class="modal-title">Sign-up!</h4>
             </div>
             <div class="modal-body">
-              <p>One fine body&hellip;</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <form>
+                <div class="form-group">
+                  <label for="signupemail">Email address</label>
+                  <input type="email" class="form-control" id="signupemail" name='credentials[email]' placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="signuppassword">Password</label>
+                  <input type="password" class="form-control" id="signuppassword" name='credentials[password]' placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label for="signuppasswordconfirm">Confirm Password</label>
+                  <input type="password" class="form-control" id="esignuppasswordconfirm" name='credentials[password_confirmation]' placeholder="Confirm Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </form>
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
