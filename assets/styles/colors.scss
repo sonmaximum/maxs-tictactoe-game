@@ -1,0 +1,11 @@
+
+$black: #000;
+$white: #fff;
+$red: #f00;
+$blue: #00f;
+$green: #0f0;
+$darkred: darken($red, 5%);
+$darkblue: darken($blue, 5%);
+$lightblue: lighten($blue, 20%);
+$lightgreen: lighten($green, 20%);
+$lightred: lighten($red, 20%);

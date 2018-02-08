@@ -90,19 +90,19 @@ const checkForWin = function () {
     checks.over = true
     console.log('X wins!')
     $('#user-feedback-message').text('X wins!')
-    $('#user-feedback-message').css('background-color', 'blue')
+    $('#user-feedback-message').css('background-color', 'lightblue')
     return 'X wins!'
   } else if (checkForWinO()) {
     checks.over = true
     console.log('0 wins!')
     $('#user-feedback-message').text('O wins!')
-    $('#user-feedback-message').css('background-color', 'red')
+    $('#user-feedback-message').css('background-color', 'lightcoral')
     return 'O wins!'
   } else if (boardFull()) {
     checks.over = true
     console.log('Draw!')
     $('#user-feedback-message').text('Draw!')
-    $('#user-feedback-message').css('background-color', 'grey')
+    $('#user-feedback-message').css('background-color', 'lightgrey')
     return 'Draw!'
   }
 }

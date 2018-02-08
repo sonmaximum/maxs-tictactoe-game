@@ -2,8 +2,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Righteous');
 
-$black: #000;
-$white: #fff;
+@import 'colors';
 
 .logout-form {
   display: inline;
@@ -16,6 +15,8 @@ $white: #fff;
   grid-template-columns: 33.33% 33.33% 33.33%;
   grid-template-rows: 33.33% 33.33% 33.33%;
   height: 600px;
+  margin: 0 auto;
+  width: 600px;
 }
 
 .board>div {
@@ -29,9 +30,9 @@ $white: #fff;
 }
 
 .red-o {
-  color: darken(red, 5%);
+  color: $darkred;
 }
 
 .blue-x {
-  color: darken(blue, 5%);
+  color: $darkblue;
 }
