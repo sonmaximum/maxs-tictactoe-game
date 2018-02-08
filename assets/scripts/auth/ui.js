@@ -14,8 +14,51 @@ const signUpFailure = function (error) {
   console.error('error is', error)
 }
 
+const signInSuccess = function (data) {
+  console.log(data)
+  $('#user-feedback-message').text('Signed in successfully')
+  $('#user-feedback-message').css('background-color', 'green')
+  store.user = data.user
+  $('#sign-in').find('input:not([type="submit"])').val('')
+}
+
+const signInFailure = function (error) {
+  console.error(error)
+  $('#user-feedback-message').text('Error on signing in')
+  $('#user-feedback-message').css('background-color', 'red')
+}
+
+const changePasswordSuccess = function () {
+  console.log('password changed successfully')
+  $('#user-feedback-message').text('Changed Password successfully')
+  $('#user-feedback-message').css('background-color', 'green')
+}
+
+const changePasswordFailure = function (error) {
+  console.error(error)
+  $('#user-feedback-message').text('Error on changing password')
+  $('#user-feedback-message').css('background-color', 'red')
+}
+const signOutSuccess = function () {
+  console.log('Signed out successfully')
+  $('#user-feedback-message').text('Signed out successfully')
+  $('#user-feedback-message').css('background-color', 'green')
+  store.user = null
+}
+
+const signOutFailure = function (error) {
+  console.error(error)
+  $('#user-feedback-message').text('Error on signing out')
+  $('#user-feedback-message').css('background-color', 'red')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
-  store
+  signInSuccess,
+  signInFailure,
+  signOutSuccess,
+  signOutFailure,
+  changePasswordSuccess,
+  changePasswordFailure
 }
