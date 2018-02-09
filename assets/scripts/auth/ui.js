@@ -45,7 +45,7 @@ const changePasswordFailure = function (error) {
   console.error(error)
   $('#user-feedback-message').text('Error on changing password')
   $('#user-feedback-message').css('background-color', 'red')
-  $('#sign-up-form').find('input:not([type="submit"])').val('')
+  $('#change-password-form').find('input:not([type="submit"])').val('')
 }
 const signOutSuccess = function () {
   console.log('Signed out successfully')
