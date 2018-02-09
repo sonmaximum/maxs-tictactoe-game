@@ -16,6 +16,9 @@ const onMove = function (event) {
   ui.updateBoard(event)
   logic.takeTurn(event.target.id)
   logic.checkForWin()
+  api.updateGame(event.target.id)
+    .then(state.onUpdateSuccess)
+    .catch(state.onUpdateFailure)
 }
 
 const onCreateGame = function (event) {

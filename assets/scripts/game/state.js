@@ -12,7 +12,19 @@ const onCreateGameFailure = function (error) {
   console.log('error is', error)
 }
 
+const onUpdateSuccess = function (response) {
+  console.log('response is', response)
+  store.game = response.game
+  console.log('stored game is', store.game)
+}
+
+const onUpdateFailure = function (error) {
+  console.log('error is', error)
+}
+
 module.exports = {
   onCreateGameSuccess,
-  onCreateGameFailure
+  onCreateGameFailure,
+  onUpdateSuccess,
+  onUpdateFailure
 }

@@ -1,4 +1,6 @@
 'use strict'
+const store = require('../store.js')
+let gameboard
 
 const emptygameboard =
   [
@@ -7,12 +9,11 @@ const emptygameboard =
     '', '', ''
   ]
 
-const gameboard =
-  [
-    '', '', '',
-    '', '', '',
-    '', '', ''
-  ]
+if (store.game) {
+  gameboard = store.game.cells
+} else {
+  gameboard = emptygameboard
+}
 
 const testgameboard =
   [
