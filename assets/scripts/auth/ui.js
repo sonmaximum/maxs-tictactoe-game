@@ -31,7 +31,7 @@ const signInFailure = function (error) {
   console.error(error)
   $('#user-feedback-message').text('Error on signing in')
   $('#user-feedback-message').css('background-color', 'red')
-  $('#change-password-form').find('input:not([type="submit"])').val('')
+  $('#sign-in-form').find('input:not([type="submit"])').val('')
 }
 
 const changePasswordSuccess = function () {
