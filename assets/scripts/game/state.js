@@ -6,6 +6,8 @@ const onCreateGameSuccess = function (response) {
   console.log('response is', response)
   store.game = response.game
   console.log('stored game is', store.game)
+  $('#user-feedback-message').text('X\'s turn')
+  $('#user-feedback-message').css('background-color', 'white')
 }
 
 const onCreateGameFailure = function (error) {

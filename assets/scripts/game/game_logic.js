@@ -1,6 +1,5 @@
 'use strict'
-const store = require('../store.js')
-let gameboard
+
 let checkboard
 
 const emptygameboard =
@@ -10,27 +9,7 @@ const emptygameboard =
     '', '', ''
   ]
 
-if (store.game) {
-  gameboard = store.game.cells
-} else {
-  gameboard = emptygameboard
-}
-
-const testgameboard =
-  [
-    'x', '', 'o',
-    'x', 'o', '',
-    'x', '', ''
-  ]
-
-const fullgameboard =
-    [
-      'x', 'x', 'o',
-      'x', 'o', 'o',
-      'x', 'o', 'x'
-    ]
-
-// const gameboard = testgameboard
+const gameboard = emptygameboard.slice()
 
 const winConditions =
   [
@@ -44,6 +23,13 @@ const winConditions =
     [2, 4, 6]
   ]
 
+const checkThreeForWinX = function ([a, b, c]) {
+  return (checkboard[a] === x && checkboard[b] === x && checkboard[c] === x)
+}
+const checkThreeForWinO = function ([a, b, c]) {
+  return (checkboard[a] === o && checkboard[b] === o && checkboard[c] === o)
+}
+
 const checkForWinX = function (board) {
   checkboard = board
   return winConditions.some(checkThreeForWinX)
@@ -54,14 +40,7 @@ const checkForWinO = function (board) {
   return winConditions.some(checkThreeForWinO)
 }
 
-const checkThreeForWinX = function ([a, b, c]) {
-  return (checkboard[a] === x && checkboard[b] === x && checkboard[c] === x)
-}
-const checkThreeForWinO = function ([a, b, c]) {
-  return (checkboard[a] === o && checkboard[b] === o && checkboard[c] === o)
-}
-
-const boardFull = function () {
+const boardFull = function (gameboard) {
   return gameboard.every(elem => elem)
 }
 const o = 'O'
@@ -70,10 +49,10 @@ const checks = {
   xturn: true,
   over: false
 }
-const takeTurn = function (index) {
+const takeTurn = function (index, gameboard) {
   if (checks.over) {
     console.log('Game is over!')
-    return 'Game is over!'
+    return
   }
   if (gameboard[index] === '') {
     if (checks.xturn) {
@@ -89,7 +68,7 @@ const takeTurn = function (index) {
   }
 }
 
-const checkForWin = function () {
+const checkForWin = function (gameboard) {
   if (checkForWinX(gameboard)) {
     checks.over = true
     console.log('X wins!')
@@ -102,7 +81,7 @@ const checkForWin = function () {
     $('#user-feedback-message').text('O wins!')
     $('#user-feedback-message').css('background-color', 'lightcoral')
     return 'O wins!'
-  } else if (boardFull()) {
+  } else if (boardFull(gameboard)) {
     checks.over = true
     console.log('Draw!')
     $('#user-feedback-message').text('Draw!')
@@ -117,8 +96,7 @@ module.exports = {
   o,
   checks,
   emptygameboard,
-  fullgameboard,
-  testgameboard,
   checkForWin,
-  checkForWinX
+  checkForWinX,
+  gameboard
 }

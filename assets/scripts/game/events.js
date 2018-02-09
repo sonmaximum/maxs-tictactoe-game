@@ -11,21 +11,12 @@ const onMove = function (event) {
     $('#user-feedback-message').css('background-color', 'red')
     return
   }
-  console.log(event)
-  console.log(event.target)
   ui.updateBoard(event)
-  logic.takeTurn(event.target.id)
-  logic.checkForWin()
+  logic.takeTurn(event.target.id, logic.gameboard)
   api.updateGame(event.target.id)
     .then(state.onUpdateSuccess)
     .catch(state.onUpdateFailure)
-}
-
-const onCreateGame = function (event) {
-  event.preventDefault()
-  api.createGame()
-    .then(state.onCreateGameSuccess)
-    .catch(state.onCreateGameFailure)
+  logic.checkForWin(logic.gameboard)
 }
 
 const onGetAll = function (event) {
@@ -49,12 +40,24 @@ const onGetGamesWon = function (event) {
     .catch(ui.onGetGamesWonFailure)
 }
 
+const onNewGame = function (event) {
+  event.preventDefault()
+  $('.board').removeClass('init')
+  logic.checks.xturn = true
+  logic.checks.over = false
+  $('.space').text('').removeClass().addClass('space')
+  logic.gameboard = logic.emptygameboard.slice()
+  api.createGame()
+    .then(state.onCreateGameSuccess)
+    .catch(state.onCreateGameFailure)
+}
+
 const addHandlers = () => {
   $('.space').on('click', onMove)
-  $('#create-game').on('submit', onCreateGame)
   $('#games-played').on('submit', onGetAll)
   $('#games-completed').on('submit', onGetComplete)
   $('#games-won').on('submit', onGetGamesWon)
+  $('#new-game').on('submit', onNewGame)
 }
 
 module.exports = {
