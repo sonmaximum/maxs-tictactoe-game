@@ -21,6 +21,42 @@ const updateBoard = function (event) {
   }
 }
 
+const onGetAllGamesSuccess = function (response) {
+  console.log(response.games.length)
+}
+
+const onGetAllGamesFailure = function (error) {
+  console.log('error is', error)
+}
+
+const onGetCompleteSuccess = function (response) {
+  console.log(response.games.length)
+}
+
+const onGetCompleteFailure = function (error) {
+  console.log('error is', error)
+}
+
+const onGetGamesWonSuccess = function (response) {
+  let num = 0
+  response.games.forEach((e) => {
+    if (logic.checkForWinX(e.cells)) {
+      num++
+    }
+  })
+  console.log(num)
+}
+
+const onGetGamesWonFailure = function (error) {
+  console.log('error is', error)
+}
+
 module.exports = {
-  updateBoard
+  updateBoard,
+  onGetAllGamesSuccess,
+  onGetAllGamesFailure,
+  onGetCompleteSuccess,
+  onGetCompleteFailure,
+  onGetGamesWonSuccess,
+  onGetGamesWonFailure
 }

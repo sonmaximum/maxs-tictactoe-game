@@ -28,9 +28,33 @@ const onCreateGame = function (event) {
     .catch(state.onCreateGameFailure)
 }
 
+const onGetAll = function (event) {
+  event.preventDefault()
+  api.getGames('')
+    .then(ui.onGetAllGamesSuccess)
+    .catch(ui.onGetAllGamesFailure)
+}
+
+const onGetComplete = function (event) {
+  event.preventDefault()
+  api.getGames('?over=true')
+    .then(ui.onGetCompleteSuccess)
+    .catch(ui.onGetCompleteFailure)
+}
+
+const onGetGamesWon = function (event) {
+  event.preventDefault()
+  api.getGames('?over=true')
+    .then(ui.onGetGamesWonSuccess)
+    .catch(ui.onGetGamesWonFailure)
+}
+
 const addHandlers = () => {
   $('.space').on('click', onMove)
   $('#create-game').on('submit', onCreateGame)
+  $('#games-played').on('submit', onGetAll)
+  $('#games-completed').on('submit', onGetComplete)
+  $('#games-won').on('submit', onGetGamesWon)
 }
 
 module.exports = {

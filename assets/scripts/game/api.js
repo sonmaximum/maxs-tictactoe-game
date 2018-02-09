@@ -24,11 +24,6 @@ const updateGame = function (id) {
   } else {
     token = logic.x
   }
-  console.log('it got here')
-  console.log('store.game.id is', store.game.id)
-  console.log('token is', token)
-  console.log('index is', id)
-  console.log('over is', logic.checks.over)
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
@@ -48,7 +43,19 @@ const updateGame = function (id) {
   })
 }
 
+const getGames = function (param) {
+  return $.ajax({
+    url: config.apiOrigin + '/games' + param,
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createGame,
-  updateGame
+  updateGame,
+  getGames
 }

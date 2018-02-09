@@ -119,5 +119,6 @@ module.exports = {
   emptygameboard,
   fullgameboard,
   testgameboard,
-  checkForWin
+  checkForWin,
+  checkForWinX
 }
