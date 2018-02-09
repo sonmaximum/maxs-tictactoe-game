@@ -4,6 +4,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 @import 'colors';
 
+body {
+  background-color: $white;
+}
+
 form {
   display: inline;
 }

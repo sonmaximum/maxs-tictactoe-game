@@ -14,7 +14,7 @@
     <body class="container-fluid">
       <h1>Max's Example</h1>
 
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
+      <button type="button" class="btn btn-primary hideloggedin" data-toggle="modal" data-target="#sign-up-modal">
         Sign-up
       </button>
 
@@ -29,7 +29,7 @@
               <form id="sign-up-form">
                 <div class="form-group">
                   <label for="signupemail">Email address</label>
-                  <input type="email" class="form-control" id="signupemail" name='credentials[email]' placeholder="Email">
+                  <input type="text" class="form-control" id="signupemail" name='credentials[email]' placeholder="Email">
                 </div>
                 <div class="form-group">
                   <label for="signuppassword">Password</label>
@@ -39,14 +39,14 @@
                   <label for="signuppasswordconfirm">Confirm Password</label>
                   <input type="password" class="form-control" id="signuppasswordconfirm" name='credentials[password_confirmation]' placeholder="Confirm Password">
                 </div>
-                <button type="submit" class="btn btn-primary" >Submit</button>
+                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">Submit</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </form>
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal">
+      <button type="button" class="btn btn-primary hideloggedin" data-toggle="modal" data-target="#sign-in-modal">
         Sign-in
       </button>
 
@@ -61,13 +61,13 @@
               <form id="sign-in-form">
                 <div class="form-group">
                   <label for="signinemail">Email address</label>
-                  <input type="email" class="form-control" id="signinemail" name='credentials[email]' placeholder="Email">
+                  <input type="text" class="form-control" id="signinemail" name='credentials[email]' placeholder="Email">
                 </div>
                 <div class="form-group">
                   <label for="signinpassword">Password</label>
                   <input type="password" class="form-control" id="signinpassword" name='credentials[password]' placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary" >Submit</button>
+                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal">Submit</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </form>
             </div>
@@ -75,7 +75,7 @@
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
 
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal">
+      <button type="button" class="btn btn-primary tog init" data-toggle="modal" data-target="#change-password-modal">
         Change Password
       </button>
 
@@ -96,7 +96,7 @@
                   <label for="changepasswordnew">New Password</label>
                   <input type="password" class="form-control" id="changepasswordnew" name='[passwords[new]' placeholder="New Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal">Submit</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </form>
             </div>
@@ -104,7 +104,7 @@
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
 
-      <form id="logout-form" class="logout-form">
+      <form id="logout-form" class="logout-form init ">
         <button type="submit" class="btn btn-primary">
           Logout
         </button>
@@ -112,7 +112,7 @@
 
     <p id="user-feedback-message"></p>
 
-      <div class="board init">
+      <div class="board init ">
         <div class="space" id=0></div>
         <div class="space" id=1></div>
         <div class="space" id=2></div>
@@ -124,26 +124,26 @@
         <div class="space" id=8></div>
       </div>
 
-      <form id="games-played" class="games-played">
+      <form id="games-played" class="games-played init ">
         <button type="submit" class="btn btn-primary">
           Get Games Played
         </button>
       </form>
 
-      <form id="games-completed" class="games-completed">
+      <form id="games-completed" class="games-completed init ">
         <button type="submit" class="btn btn-primary">
           Get Games Completed
         </button>
       </form>
 
 
-      <form id="games-won" class="games-won">
+      <form id="games-won" class="games-won init ">
         <button type="submit" class="btn btn-primary">
           Get Games Won
         </button>
       </form>
 
-      <form id="new-game" class="new-game">
+      <form id="new-game" class="new-game init ">
         <button type="submit" class="btn btn-primary">
           New Game
         </button>
