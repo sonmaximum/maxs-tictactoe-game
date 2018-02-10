@@ -5,7 +5,34 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import 'colors';
 
 body {
-  background-color: $white;
+  background-color: $background;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+header {
+  background-color: $medium;
+  color: $white;
+  height: inherit;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 60px;
+}
+
+h1 {
+  color: $medium;
+  font-size: 3em;
+  margin: 0;
+  padding: .7em 0;
+  text-align: center;
+}
+
+.headerbox {
+  background-color: $dark;
+  margin: 0;
 }
 
 form {
@@ -15,16 +42,16 @@ form {
 .board {
   background-color: $black;
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 32.3% 32.3% 32.3%;
-  grid-template-rows: 32.3% 32.3% 32.3%;
+  grid-gap: 2%;
+  grid-template-columns: 32% 32% 32%;
+  grid-template-rows: 32% 32% 32%;
   height: 600px;
   margin: 0 auto 10px;
   width: 600px;
 }
 
 .board>div {
-  background-color: $white;
+  background-color: $background;
   display: table-cell;
   font-family: 'Righteous', cursive;
   font-size: 200px;
