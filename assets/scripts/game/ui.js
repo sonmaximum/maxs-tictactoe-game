@@ -11,11 +11,11 @@ const updateBoard = function (event) {
   } else {
     if (logic.checks.xturn) {
       $(event.target).text(logic.x).addClass('blue-x')
-      $('#user-feedback-message').text('O\'s turn')
+      $('#user-feedback-message').text('Currently: O\'s turn')
       $('#user-feedback-message').css('background-color', 'white')
     } else {
       $(event.target).text(logic.o).addClass('red-o')
-      $('#user-feedback-message').text('X\'s turn')
+      $('#user-feedback-message').text('Currently: X\'s turn')
       $('#user-feedback-message').css('background-color', 'white')
     }
   }

@@ -12,11 +12,10 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
+
+
       <div class="headerbox">
         <h1>Max's Tic-Tac-Toe Game</h1>
-        <header class="init">
-          temp text
-        </header>
       </div>
       <section class="signinmaincontent hideloggedin">
         <section class="signinbox">
@@ -28,8 +27,8 @@
             Create New User
           </button>
         </section>
-    </section>
-    <section class="maincontent">
+      </section>
+
       <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-sm" role="document">
           <div class="modal-content">
@@ -84,10 +83,6 @@
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
 
-      <button type="button" class="btn btn-primary tog init" data-toggle="modal" data-target="#change-password-modal">
-        Change Password
-      </button>
-
       <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-sm" role="document">
           <div class="modal-content">
@@ -113,51 +108,153 @@
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
 
-      <form id="logout-form" class="logout-form init ">
-        <button type="submit" class="btn btn-primary">
-          Logout
-        </button>
-      </form>
+      <div class="modal fade" id='sign-in-success' tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Success!</h4>
+            </div>
+            <div class="modal-body">
+              <p>Signed in successfully!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
 
-      <p id="user-feedback-message"></p>
+      <div class="modal fade" id='sign-up-success' tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Success!</h4>
+            </div>
+            <div class="modal-body">
+              <p>New user successfully registered!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
 
-      <div class="board init ">
-        <div class="space" id=0></div>
-        <div class="space" id=1></div>
-        <div class="space" id=2></div>
-        <div class="space" id=3></div>
-        <div class="space" id=4></div>
-        <div class="space" id=5></div>
-        <div class="space" id=6></div>
-        <div class="space" id=7></div>
-        <div class="space" id=8></div>
-      </div>
+      <div class="modal fade" id='logout-success' tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Success!</h4>
+            </div>
+            <div class="modal-body">
+              <p>Signed out successfully!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
 
-      <form id="games-played" class="games-played init ">
-        <button type="submit" class="btn btn-primary">
-          Get Games Played
-        </button>
-      </form>
+      <div class="modal fade" id='sign-up-failure' tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Error on Sign-up</h4>
+            </div>
+            <div class="modal-body">
+              <p>Uh-oh! Something went wrong...</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
 
-      <form id="games-completed" class="games-completed init ">
-        <button type="submit" class="btn btn-primary">
-          Get Games Completed
-        </button>
-      </form>
+      <div class="modal fade" id='sign-in-failure' tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Error on Sign-in</h4>
+            </div>
+            <div class="modal-body">
+              <p>Uh-oh! Something went wrong...</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <section class="maincontent">
+
+        <div class="board init ">
+          <div class="space" id=0></div>
+          <div class="space" id=1></div>
+          <div class="space" id=2></div>
+          <div class="space" id=3></div>
+          <div class="space" id=4></div>
+          <div class="space" id=5></div>
+          <div class="space" id=6></div>
+          <div class="space" id=7></div>
+          <div class="space" id=8></div>
+        </div>
+
+        <section class="instructions">
+          <p>Click on a box to make a move</p>
+          <p>Three in a row wins!</p>
+        </section>
+
+        <aside class="messagebar init">
+          <p id="user-feedback-message" class="user-feedback-message"></p>
+        </aside>
+
+        <aside class="statbar init">
+
+          <button type="button" class="btn btn-primary tog init" data-toggle="modal" data-target="#change-password-modal">
+            Change Password
+          </button>
+
+          <form id="logout-form" class="logout-form init ">
+            <button type="submit" class="btn btn-primary">
+              Logout
+            </button>
+          </form>
+
+          <form id="games-played" class="games-played init ">
+            <button type="submit" class="btn btn-primary">
+              Get Games Played
+            </button>
+          </form>
+
+          <form id="games-completed" class="games-completed init ">
+            <button type="submit" class="btn btn-primary">
+              Get Games Completed
+            </button>
+          </form>
 
 
-      <form id="games-won" class="games-won init ">
-        <button type="submit" class="btn btn-primary">
-          Get Games Won
-        </button>
-      </form>
+          <form id="games-won" class="games-won init ">
+            <button type="submit" class="btn btn-primary">
+              Get Games Won
+            </button>
+          </form>
 
-      <form id="new-game" class="new-game init ">
-        <button type="submit" class="btn btn-primary">
-          New Game
-        </button>
-      </form>
-    </section>
+          <form id="new-game" class="new-game init ">
+            <button type="submit" class="btn btn-primary">
+              New Game
+            </button>
+          </form>
+        </aside>
+
+      </section>
       <footer>
         <div class="footerdiv">
           <p class="copyright">Copyright 2018</p>
