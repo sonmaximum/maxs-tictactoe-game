@@ -10,11 +10,11 @@ body {
 
 .container-fluid {
   padding: 0;
+  width: 100%;
 }
 
 header {
   background-color: $medium;
-  color: $white;
   height: inherit;
   position: fixed;
   right: 0;
@@ -28,11 +28,31 @@ h1 {
   margin: 0;
   padding: .7em 0;
   text-align: center;
+  width: 100%;
 }
 
 .headerbox {
   background-color: $dark;
   margin: 0;
+}
+
+.signinbox {
+  background-color: $medium;
+  border-radius: 10px;
+  height: auto;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 30px;
+  width: 50%;
+}
+
+.signinmaincontent  {
+  height: 100px;
+  margin-top: 100px;
+}
+
+.loggedoutbuttons {
+  margin: auto;
 }
 
 form {
@@ -45,17 +65,17 @@ form {
   grid-gap: 2%;
   grid-template-columns: 32% 32% 32%;
   grid-template-rows: 32% 32% 32%;
-  height: 600px;
+  height: 500px;
   margin: 0 auto 10px;
-  width: 600px;
+  width: 500px;
 }
 
 .board>div {
   background-color: $background;
   display: table-cell;
   font-family: 'Righteous', cursive;
-  font-size: 200px;
-  line-height: 200px;
+  font-size: 180px;
+  line-height: 160px;
   text-align: center;
   vertical-align: center;
 }
@@ -68,6 +88,31 @@ form {
   color: $darkblue;
 }
 
+footer {
+  background-color: $dark;
+  bottom: 0;
+  color: $offwhite;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  line-height: 26px;
+  padding: 20px 100px 10px;
+  position: fixed;
+  width: 100%;
+}
+
 .init {
   visibility: hidden;
+}
+
+.copyright {
+  float: left;
+}
+
+.signature {
+  float: right;
+}
+
+.maincontent {
+  margin-bottom: 70px;
 }

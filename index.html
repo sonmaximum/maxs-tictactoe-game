@@ -18,10 +18,18 @@
           temp text
         </header>
       </div>
-      <button type="button" class="btn btn-primary hideloggedin" data-toggle="modal" data-target="#sign-up-modal">
-        Sign-up
-      </button>
-
+      <section class="signinmaincontent hideloggedin">
+        <section class="signinbox">
+          <button type="button" class="btn btn-primary loggedoutbuttons btn-block" data-toggle="modal" data-target="#sign-in-modal">
+            Log In To Play!
+          </button>
+          <br>
+          <button type="button" class="btn btn-primary loggedoutbuttons btn-block" data-toggle="modal" data-target="#sign-up-modal">
+            Create New User
+          </button>
+        </section>
+    </section>
+    <section class="maincontent">
       <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-sm" role="document">
           <div class="modal-content">
@@ -50,9 +58,6 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
-      <button type="button" class="btn btn-primary hideloggedin" data-toggle="modal" data-target="#sign-in-modal">
-        Sign-in
-      </button>
 
       <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-sm" role="document">
@@ -114,7 +119,7 @@
         </button>
       </form>
 
-    <p id="user-feedback-message"></p>
+      <p id="user-feedback-message"></p>
 
       <div class="board init ">
         <div class="space" id=0></div>
@@ -152,6 +157,12 @@
           New Game
         </button>
       </form>
-
+    </section>
+      <footer>
+        <div class="footerdiv">
+          <p class="copyright">Copyright 2018</p>
+          <p class="signature">Made by Max Juchheim</p>
+        </div>
+      </footer>
     </body>
 </html>
