@@ -207,8 +207,8 @@
           <div class="space" id=8></div>
         </div>
 
-        <section class="instructions">
-          <p>Click on a box to make a move</p>
+        <section class="instructions init">
+          <p>Click on a box to make a move.</p>
           <p>Three in a row wins!</p>
         </section>
 
@@ -217,17 +217,25 @@
         </aside>
 
         <aside class="statbar init">
+          <p class="welcomemessage">Welcome, user <span id="username"></span>!
+          </p>
 
-          <button type="button" class="btn btn-primary tog init" data-toggle="modal" data-target="#change-password-modal">
-            Change Password
-          </button>
-
-          <form id="logout-form" class="logout-form init ">
-            <button type="submit" class="btn btn-primary">
-              Logout
+          <form id="new-game" class="new-game init ">
+            <button type="submit" class="btn btn-primary new-game">
+              Start New Game!
             </button>
           </form>
+          <div class ='userbuttons'>
+            <button type="button" class="btn btn-primary cpw init" data-toggle="modal" data-target="#change-password-modal">
+              Change Password
+            </button>
 
+            <form id="logout-form" class="logout-form logout init ">
+              <button type="submit" class="btn btn-primary">
+                Logout
+              </button>
+            </form>
+          </div>
           <form id="games-played" class="games-played init ">
             <button type="submit" class="btn btn-primary">
               Get Games Played
@@ -247,11 +255,6 @@
             </button>
           </form>
 
-          <form id="new-game" class="new-game init ">
-            <button type="submit" class="btn btn-primary">
-              New Game
-            </button>
-          </form>
         </aside>
 
       </section>

@@ -22,6 +22,7 @@ const signInSuccess = function (data) {
   $('.instructions').css('visibility', 'hidden')
   $('.maincontent').css('display', 'flex')
   $('.hideloggedin').hide()
+  $('#username').text(data.user.email)
   $('#sign-in-form').find('input:not([type="submit"])').val('')
   // $('#sign-in-success').modal('show')
 }
