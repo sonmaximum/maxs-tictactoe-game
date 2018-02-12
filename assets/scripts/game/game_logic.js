@@ -34,7 +34,6 @@ const checkForWinX = function (board) {
   checkboard = board
   return winConditions.some(checkThreeForWinX)
 }
-
 const checkForWinO = function (board) {
   checkboard = board
   return winConditions.some(checkThreeForWinO)
@@ -43,12 +42,14 @@ const checkForWinO = function (board) {
 const boardFull = function (gameboard) {
   return gameboard.every(elem => elem)
 }
+
 const o = 'O'
 const x = 'X'
 const checks = {
   xturn: true,
   over: false
 }
+
 const takeTurn = function (index, gameboard) {
   if (checks.over) {
     return
@@ -69,14 +70,17 @@ const checkForWin = function (gameboard) {
     checks.over = true
     $('#user-feedback-message').text('X wins!')
     $('#user-feedback-message').css('background-color', 'lightblue')
+    $('#xwin').modal('show')
   } else if (checkForWinO(gameboard)) {
     checks.over = true
     $('#user-feedback-message').text('O wins!')
     $('#user-feedback-message').css('background-color', 'lightcoral')
+    $('#owin').modal('show')
   } else if (boardFull(gameboard)) {
     checks.over = true
     $('#user-feedback-message').text('Draw!')
     $('#user-feedback-message').css('background-color', 'lightgrey')
+    $('#draw').modal('show')
   }
 }
 

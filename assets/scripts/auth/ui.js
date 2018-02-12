@@ -8,11 +8,9 @@ const signUpSuccess = function (data) {
 }
 
 const signUpFailure = function (error) {
-  $('#user-feedback-message').text('Error on sign up')
-  $('#user-feedback-message').css('background-color', 'red')
-  console.error('error is', error)
   $('#sign-up-form').find('input:not([type="submit"])').val('')
   $('#sign-up-failure').modal('show')
+  store.error = error
 }
 
 const signInSuccess = function (data) {
@@ -28,25 +26,20 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (error) {
-  console.error(error)
-  $('#user-feedback-message').text('Error on signing in')
-  $('#user-feedback-message').css('background-color', 'red')
   $('#sign-in-form').find('input:not([type="submit"])').val('')
   $('#sign-in-failure').modal('show')
+  store.error = error
 }
 
 const changePasswordSuccess = function () {
-  console.log('password changed successfully')
-  $('#user-feedback-message').text('Changed Password successfully')
-  $('#user-feedback-message').css('background-color', 'lightgreen')
   $('#change-password-form').find('input:not([type="submit"])').val('')
+  $('#change-password-success').modal('show')
 }
 
 const changePasswordFailure = function (error) {
-  console.error(error)
-  $('#user-feedback-message').text('Error on changing password')
-  $('#user-feedback-message').css('background-color', 'red')
   $('#change-password-form').find('input:not([type="submit"])').val('')
+  $('#change-password-failure').modal('show')
+  store.error = error
 }
 const signOutSuccess = function () {
   $('#logout-success').modal('show')
@@ -60,9 +53,8 @@ const signOutSuccess = function () {
 }
 
 const signOutFailure = function (error) {
-  console.error(error)
-  $('#user-feedback-message').text('Error on signing out')
-  $('#user-feedback-message').css('background-color', 'red')
+  $('#generic-failure').modal('show')
+  store.error = error
 }
 
 module.exports = {

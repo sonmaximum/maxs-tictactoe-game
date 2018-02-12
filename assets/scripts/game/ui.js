@@ -1,5 +1,6 @@
 'use strict'
 const logic = require('./game_logic.js')
+const store = require('../store.js')
 
 const updateBoard = function (event) {
   if (logic.checks.over) {
@@ -26,7 +27,7 @@ const onGetAllGamesSuccess = function (response) {
 }
 
 const onGetAllGamesFailure = function (error) {
-  console.log('error is', error)
+  store.error = error
 }
 
 const onGetCompleteSuccess = function (response) {
@@ -34,7 +35,7 @@ const onGetCompleteSuccess = function (response) {
 }
 
 const onGetCompleteFailure = function (error) {
-  console.log('error is', error)
+  store.error = error
 }
 
 const onGetGamesWonSuccess = function (response) {
@@ -48,7 +49,7 @@ const onGetGamesWonSuccess = function (response) {
 }
 
 const onGetGamesWonFailure = function (error) {
-  console.log('error is', error)
+  store.error = error
 }
 
 module.exports = {

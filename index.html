@@ -29,6 +29,60 @@
         </section>
       </section>
 
+      <div class="modal fade" id="game-over-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Oops, this game is over!</h4>
+            </div>
+            <div class="modal-body">
+              <p>The current game has ended.  <br>Would you like to play again?</p>
+            </div>
+            <div class="modal-footer">
+              <form id="game-over-form">
+                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#game-over-modal">Start New Game!</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </form>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+
+      <div class="modal fade" id='xwin' tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content win">
+            <div class="modal-body win">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <p class="blue-x win">X WINS!</p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <div class="modal fade" id='owin' tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content win">
+            <div class="modal-body win">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <p class="red-o win">O WINS!</p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <div class="modal fade" id='draw' tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content win">
+            <div class="modal-body win draw">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <p class="win">IT'S A DRAW!</p>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
       <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-sm" role="document">
           <div class="modal-content">
@@ -109,7 +163,7 @@
       </div><!-- /.modal -->
 
       <div class="modal fade" id='sign-in-success' tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-sm" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -125,8 +179,26 @@
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
 
+      <div class="modal fade" id='change-password-success' tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Success!</h4>
+            </div>
+            <div class="modal-body">
+              <p>Password changed successfully!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+
       <div class="modal fade" id='sign-up-success' tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-sm" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -143,7 +215,7 @@
       </div><!-- /.modal -->
 
       <div class="modal fade" id='logout-success' tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-sm" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -160,11 +232,62 @@
       </div><!-- /.modal -->
 
       <div class="modal fade" id='sign-up-failure' tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-sm" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <h4 class="modal-title">Error on Sign-up</h4>
+            </div>
+            <div class="modal-body">
+              <p>Uh-oh! Something went wrong...  <br>Double check your input?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <div class="modal fade" id='sign-in-failure' tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Error on Sign-in</h4>
+            </div>
+            <div class="modal-body">
+              <p>Uh-oh! Something went wrong...  <br>Double check your input?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <div class="modal fade" id='change-password-failure' tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Error on Changing Password</h4>
+            </div>
+            <div class="modal-body">
+              <p>Uh-oh! Something went wrong...  <br>Double check your input?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <div class="modal fade" id='generic-failure' tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Error</h4>
             </div>
             <div class="modal-body">
               <p>Uh-oh! Something went wrong...</p>
@@ -176,22 +299,6 @@
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
 
-      <div class="modal fade" id='sign-in-failure' tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">Error on Sign-in</h4>
-            </div>
-            <div class="modal-body">
-              <p>Uh-oh! Something went wrong...</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
 
       <section class="maincontent">
 

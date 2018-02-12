@@ -12,7 +12,7 @@ const onCreateGameSuccess = function (response) {
 }
 
 const onCreateGameFailure = function (error) {
-  console.log('error is', error)
+  store.error = error
 }
 
 const onUpdateSuccess = function (response) {
@@ -20,7 +20,7 @@ const onUpdateSuccess = function (response) {
 }
 
 const onUpdateFailure = function (error) {
-  console.log('error is', error)
+  store.error = error
 }
 
 module.exports = {

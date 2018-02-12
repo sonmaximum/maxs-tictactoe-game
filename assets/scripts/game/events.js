@@ -9,6 +9,7 @@ const onMove = function (event) {
   if (logic.checks.over) {
     $('#user-feedback-message').text('Game is over!')
     $('#user-feedback-message').css('background-color', 'red')
+    $('#game-over-modal').modal('show')
     return
   }
   ui.updateBoard(event)
@@ -55,6 +56,7 @@ const onNewGame = function (event) {
 const addHandlers = () => {
   $('.space').on('click', onMove)
   $('#new-game').on('submit', onNewGame)
+  $('#game-over-form').on('submit', onNewGame)
 }
 
 module.exports = {
