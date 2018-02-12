@@ -22,7 +22,7 @@ const updateBoard = function (event) {
 }
 
 const onGetAllGamesSuccess = function (response) {
-  console.log(response.games.length)
+  $('#played').text(response.games.length)
 }
 
 const onGetAllGamesFailure = function (error) {
@@ -30,7 +30,7 @@ const onGetAllGamesFailure = function (error) {
 }
 
 const onGetCompleteSuccess = function (response) {
-  console.log(response.games.length)
+  $('#completed').text(response.games.length)
 }
 
 const onGetCompleteFailure = function (error) {
@@ -44,7 +44,7 @@ const onGetGamesWonSuccess = function (response) {
       num++
     }
   })
-  console.log(num)
+  $('#won').text(num)
 }
 
 const onGetGamesWonFailure = function (error) {

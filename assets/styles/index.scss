@@ -134,6 +134,20 @@ footer {
   width: 20%;
 }
 
+.statbox {
+  background-color: $white;
+  border-radius: 5px;
+  bottom: 100px;
+  margin: 20px;
+  padding: 5px;
+  position: absolute;
+  width: 80%;
+}
+
+.statbox>p {
+  margin: auto;
+}
+
 .messagebar {
   background-color: $medium;
   height: 100%;

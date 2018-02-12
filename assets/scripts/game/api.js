@@ -20,9 +20,9 @@ const createGame = function () {
 
 const updateGame = function (id) {
   if (logic.checks.xturn) {
-    token = logic.x
-  } else {
     token = logic.o
+  } else {
+    token = logic.x
   }
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,

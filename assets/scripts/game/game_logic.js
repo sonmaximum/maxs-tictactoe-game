@@ -51,7 +51,6 @@ const checks = {
 }
 const takeTurn = function (index, gameboard) {
   if (checks.over) {
-    console.log('Game is over!')
     return
   }
   if (gameboard[index] === '') {
@@ -61,9 +60,6 @@ const takeTurn = function (index, gameboard) {
       gameboard[index] = o
     }
     checks.xturn = !checks.xturn
-    console.log(gameboard[0], '|', gameboard[1], '|', gameboard[2])
-    console.log(gameboard[3], '|', gameboard[4], '|', gameboard[5])
-    console.log(gameboard[6], '|', gameboard[7], '|', gameboard[8])
     return gameboard
   }
 }
@@ -71,22 +67,16 @@ const takeTurn = function (index, gameboard) {
 const checkForWin = function (gameboard) {
   if (checkForWinX(gameboard)) {
     checks.over = true
-    console.log('X wins!')
     $('#user-feedback-message').text('X wins!')
     $('#user-feedback-message').css('background-color', 'lightblue')
-    return 'X wins!'
   } else if (checkForWinO(gameboard)) {
     checks.over = true
-    console.log('0 wins!')
     $('#user-feedback-message').text('O wins!')
     $('#user-feedback-message').css('background-color', 'lightcoral')
-    return 'O wins!'
   } else if (boardFull(gameboard)) {
     checks.over = true
-    console.log('Draw!')
     $('#user-feedback-message').text('Draw!')
     $('#user-feedback-message').css('background-color', 'lightgrey')
-    return 'Draw!'
   }
 }
 
