@@ -1,7 +1,11 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+// Google Font
 @import url('https://fonts.googleapis.com/css?family=Righteous');
 @import 'colors';
+
+$righteous: 'Righteous', sans-serif;
 
 html {
   height: 100%;
@@ -53,10 +57,10 @@ footer {
   width: 500px;
 }
 
-.board>div {
+.board > div {
   background-color: $background;
   display: table-cell;
-  font-family: 'Righteous', cursive;
+  font-family: $righteous;
   font-size: 180px;
   line-height: 160px;
   text-align: center;
@@ -166,7 +170,7 @@ footer {
   width: 80%;
 }
 
-.statbox>p {
+.statbox > p {
   margin: auto;
 }
 
@@ -196,7 +200,7 @@ footer {
 .win {
   background-color: $offwhite;
   border-radius: 20px;
-  font-family: 'Righteous', cursive;
+  font-family: $righteous;
   font-size: 180px;
   line-height: 160px;
   text-align: center;
