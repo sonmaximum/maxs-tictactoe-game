@@ -47,7 +47,9 @@ const o = 'O'
 const x = 'X'
 const checks = {
   xturn: true,
-  over: false
+  over: false,
+  vsai: false,
+  aiturn: false
 }
 
 const takeTurn = function (index, gameboard) {
@@ -92,5 +94,6 @@ module.exports = {
   emptygameboard,
   checkForWin,
   checkForWinX,
-  gameboard
+  gameboard,
+  boardFull
 }

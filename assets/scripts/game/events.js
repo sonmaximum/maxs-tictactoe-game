@@ -5,6 +5,9 @@ const ui = require('./ui.js')
 const api = require('./api.js')
 const state = require('./state.js')
 
+let aimove
+let validmove = true
+
 const onMove = function (event) {
   if (logic.checks.over) {
     $('#user-feedback-message').text('Game is over!')
@@ -12,7 +15,10 @@ const onMove = function (event) {
     $('#game-over-modal').modal('show')
     return
   }
-  ui.updateBoard(event)
+  if ($(event.target).text()) {
+    validmove = false
+  }
+  ui.updateBoard(event.target)
   logic.takeTurn(event.target.id, logic.gameboard)
   logic.checkForWin(logic.gameboard)
   api.updateGame(event.target.id)
@@ -20,8 +26,33 @@ const onMove = function (event) {
     .catch(state.onUpdateFailure)
     .then(getComplete)
     .then(getGamesWon)
+    .then(takeAImove)
+    .then(function () { validmove = true })
 }
 
+const takeAImove = function () {
+  if (logic.checks.vsai) {
+    if (validmove) {
+      if (!logic.boardFull(logic.gameboard)) {
+        logic.checks.aiturn = true
+        while (logic.checks.aiturn) {
+          aimove = Math.floor(Math.random() * 9)
+          if (!logic.gameboard[aimove]) {
+            ui.updateBoard($('#' + aimove))
+            logic.takeTurn(aimove, logic.gameboard)
+            logic.checkForWin(logic.gameboard)
+            api.updateGame(aimove)
+              .then(state.onUpdateSuccess)
+              .catch(state.onUpdateFailure)
+              .then(getComplete)
+              .then(getGamesWon)
+            logic.checks.aiturn = false
+          }
+        }
+      }
+    }
+  }
+}
 const getAll = function () {
   api.getGames('')
     .then(ui.onGetAllGamesSuccess)

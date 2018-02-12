@@ -2,20 +2,20 @@
 const logic = require('./game_logic.js')
 const store = require('../store.js')
 
-const updateBoard = function (event) {
+const updateBoard = function (element) {
   if (logic.checks.over) {
     $('#user-feedback-message').text('Game is over!')
     $('#user-feedback-message').css('background-color', 'red')
-  } else if ($(event.target).text()) {
+  } else if ($(element).text()) {
     $('#user-feedback-message').text('Invalid move!')
     $('#user-feedback-message').css('background-color', 'red')
   } else {
     if (logic.checks.xturn) {
-      $(event.target).text(logic.x).addClass('blue-x')
+      $(element).text(logic.x).addClass('blue-x')
       $('#user-feedback-message').text('Currently: O\'s turn')
       $('#user-feedback-message').css('background-color', 'white')
     } else {
-      $(event.target).text(logic.o).addClass('red-o')
+      $(element).text(logic.o).addClass('red-o')
       $('#user-feedback-message').text('Currently: X\'s turn')
       $('#user-feedback-message').css('background-color', 'white')
     }
