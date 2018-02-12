@@ -16,8 +16,7 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   store.user = data.user
   $('.init').css('visibility', 'visible')
-  $('.board').css('visibility', 'hidden')
-  $('.instructions').css('visibility', 'hidden')
+  $('.board, .instructions').css('visibility', 'hidden')
   $('.maincontent').css('display', 'flex')
   $('.hideloggedin').hide()
   $('#username').text(data.user.email)
@@ -44,11 +43,8 @@ const changePasswordFailure = function (error) {
 const signOutSuccess = function () {
   $('#logout-success').modal('show')
   $('.hideloggedin').show()
-  $('.init').css('visibility', 'hidden')
-  $('.board').css('visibility', 'hidden')
-  $('.instructions').css('visibility', 'hidden')
+  $('.init, .board, .instructions, .user-feedback-message').css('visibility', 'hidden')
   $('.maincontent').css('display', 'none')
-  $('.user-feedback-message').css('visibility', 'hidden')
   store.user = null
 }
 
