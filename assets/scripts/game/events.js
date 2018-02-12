@@ -71,6 +71,17 @@ const getGamesWon = function () {
     .catch(ui.onGetGamesWonFailure)
 }
 
+const onGameSelector = function (event) {
+  event.preventDefault()
+  $('#game-type-modal').modal('show')
+}
+
+const onNewAIGame = function (event) {
+  event.preventDefault()
+  logic.checks.vsai = true
+  onNewGame(event)
+}
+
 const onNewGame = function (event) {
   event.preventDefault()
   $('.board').removeClass('init')
@@ -86,8 +97,9 @@ const onNewGame = function (event) {
 
 const addHandlers = () => {
   $('.space').on('click', onMove)
-  $('#new-game').on('submit', onNewGame)
-  $('#game-over-form').on('submit', onNewGame)
+  $('#game-over-form').on('submit', onGameSelector)
+  $('#game-type-noai-form').on('submit', onNewGame)
+  $('#game-type-ai-form').on('submit', onNewAIGame)
 }
 
 module.exports = {

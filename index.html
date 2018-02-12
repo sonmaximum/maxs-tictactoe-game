@@ -29,6 +29,26 @@
         </section>
       </section>
 
+      <div class="modal fade" id="game-type-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Choose game type</h4>
+            </div>
+            <div class="modal-body">
+              <form id="game-type-noai-form">
+                <button type="submit" class="btn btn-default btn-block" data-toggle="modal" data-target="#game-type-modal">I have a friend with me!</button>
+              </form>
+              <br>
+              <form id="game-type-ai-form">
+                <button type="submit" class="btn btn-default btn-block" data-toggle="modal" data-target="#game-type-modal">I want to beat a dumb computer!</button>
+              </form>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
       <div class="modal fade" id="game-over-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-sm" role="document">
           <div class="modal-content">
@@ -328,7 +348,7 @@
           </p>
 
           <form id="new-game" class="new-game init ">
-            <button type="submit" class="btn btn-primary new-game">
+            <button type="button" class="btn btn-primary new-game" data-toggle="modal" data-target="#game-type-modal">
               Start New Game!
             </button>
           </form>
