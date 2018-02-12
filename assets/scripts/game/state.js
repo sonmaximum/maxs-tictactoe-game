@@ -13,6 +13,7 @@ const onCreateGameSuccess = function (response) {
 
 const onCreateGameFailure = function (error) {
   store.error = error
+  $('#generic-failure').modal('show')
 }
 
 const onUpdateSuccess = function (response) {
@@ -21,6 +22,7 @@ const onUpdateSuccess = function (response) {
 
 const onUpdateFailure = function (error) {
   store.error = error
+  $('#generic-failure').modal('show')
 }
 
 module.exports = {

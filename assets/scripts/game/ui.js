@@ -28,6 +28,7 @@ const onGetAllGamesSuccess = function (response) {
 
 const onGetAllGamesFailure = function (error) {
   store.error = error
+  $('#generic-failure').modal('show')
 }
 
 const onGetCompleteSuccess = function (response) {
@@ -36,6 +37,7 @@ const onGetCompleteSuccess = function (response) {
 
 const onGetCompleteFailure = function (error) {
   store.error = error
+  $('#generic-failure').modal('show')
 }
 
 const onGetGamesWonSuccess = function (response) {
@@ -50,6 +52,7 @@ const onGetGamesWonSuccess = function (response) {
 
 const onGetGamesWonFailure = function (error) {
   store.error = error
+  $('#generic-failure').modal('show')
 }
 
 module.exports = {
