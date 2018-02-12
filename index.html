@@ -352,22 +352,23 @@
               Start New Game!
             </button>
           </form>
-          <div class ='userbuttons'>
-            <button type="button" class="btn btn-primary cpw init" data-toggle="modal" data-target="#change-password-modal">
-              Change Password
-            </button>
-
-            <form id="logout-form" class="logout-form logout init ">
-              <button type="submit" class="btn btn-primary">
-                Logout
+          <div class="botright">
+            <div class="statbox">
+              <p>Games Played: <span id="played"></span></p>
+              <p>Games Completed: <span id="completed"></span></p>
+              <p>Games Won: <span id="won"></span></p>
+            </div>
+            <div class ='userbuttons'>
+              <button type="button" class="btn btn-primary cpw init" data-toggle="modal" data-target="#change-password-modal">
+                Change Password
               </button>
-            </form>
-          </div>
 
-          <div class="statbox">
-            <p>Games Played: <span id="played"></span></p>
-            <p>Games Completed: <span id="completed"></span></p>
-            <p>Games Won: <span id="won"></span></p>
+              <form id="logout-form" class="logout-form logout init ">
+                <button type="submit" class="btn btn-primary">
+                  Logout
+                </button>
+              </form>
+            </div>
           </div>
         </aside>
 

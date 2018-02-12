@@ -161,13 +161,17 @@ footer {
   width: 20%;
 }
 
+.botright {
+  bottom: 80px;
+  position: absolute;
+  width: 100%;
+}
+
 .statbox {
   background-color: $white;
   border-radius: 5px;
-  bottom: 100px;
   margin: 20px;
   padding: 5px;
-  position: absolute;
   width: 80%;
 }
 
@@ -183,9 +187,7 @@ footer {
 }
 
 .userbuttons {
-  bottom: 75px;
   margin: 0 auto;
-  position: absolute;
   text-align: center;
   width: 100%;
 }
@@ -206,4 +208,38 @@ footer {
   line-height: 160px;
   text-align: center;
   vertical-align: center;
+}
+
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  footer {
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .copyright,
+  .signature {
+    float: none;
+  }
+
+  .board {
+    height: 150px;
+    width: 50%;
+  }
+
+  .board > div {
+    font-family: $righteous;
+    font-size: 45px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: center;
+  }
+
 }
