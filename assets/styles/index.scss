@@ -1,7 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Righteous');
-
 @import 'colors';
 
 html {
@@ -41,38 +40,6 @@ footer {
   width: 100%;
 }
 
-.container-fluid {
-  padding: 0;
-  width: 100%;
-}
-
-.headerbox {
-  background-color: $dark;
-  height: 15%;
-  margin: 0;
-  width: 100%;
-}
-
-.signinbox {
-  background-color: $medium;
-  border-radius: 10px;
-  height: auto;
-  margin: 0 auto;
-  max-width: 500px;
-  padding: 30px;
-  width: 50%;
-}
-
-.signinmaincontent  {
-  height: 100px;
-  margin-top: 100px;
-  position: relative;
-}
-
-.loggedoutbuttons {
-  margin: auto;
-}
-
 .board {
   background-color: $black;
   display: grid;
@@ -96,24 +63,41 @@ footer {
   vertical-align: center;
 }
 
-.red-o {
-  color: $darkred;
-}
-
 .blue-x {
   color: $darkblue;
 }
 
-.init {
-  visibility: hidden;
+.container-fluid {
+  padding: 0;
+  width: 100%;
 }
 
 .copyright {
   float: left;
 }
 
-.signature {
-  float: right;
+.draw {
+  color: $grey;
+}
+
+.headerbox {
+  background-color: $dark;
+  height: 15%;
+  margin: 0;
+  width: 100%;
+}
+
+.init {
+  visibility: hidden;
+}
+
+.instructions {
+  line-height: 10px;
+  text-align: center;
+}
+
+.loggedoutbuttons {
+  margin: auto;
 }
 
 .maincontent {
@@ -121,6 +105,44 @@ footer {
   flex-direction: column;
   height: 85%;
   justify-content: center;
+  position: relative;
+}
+
+.messagebar {
+  background-color: $medium;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 20%;
+}
+
+.new-game {
+  display: block;
+  margin: auto;
+}
+
+.red-o {
+  color: $darkred;
+}
+
+.signature {
+  float: right;
+}
+
+.signinbox {
+  background-color: $medium;
+  border-radius: 10px;
+  height: auto;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 30px;
+  width: 50%;
+}
+
+.signinmaincontent {
+  height: 100px;
+  margin-top: 100px;
   position: relative;
 }
 
@@ -148,38 +170,11 @@ footer {
   margin: auto;
 }
 
-.messagebar {
-  background-color: $medium;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 20%;
-}
-
-.instructions {
-  line-height: 10px;
-  text-align: center;
-}
-
 .user-feedback-message {
   border-radius: 5px;
   margin: 20px;
   padding: 5px;
   text-align: center;
-}
-
-.welcomemessage {
-  background-color: $white;
-  border-radius: 5px;
-  margin: 20px;
-  padding: 5px;
-  text-align: center;
-}
-
-.new-game {
-  display: block;
-  margin: auto;
 }
 
 .userbuttons {
@@ -190,6 +185,14 @@ footer {
   width: 100%;
 }
 
+.welcomemessage {
+  background-color: $white;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 5px;
+  text-align: center;
+}
+
 .win {
   background-color: $offwhite;
   border-radius: 20px;
@@ -198,8 +201,4 @@ footer {
   line-height: 160px;
   text-align: center;
   vertical-align: center;
-}
-
-.draw {
-  color: $grey;
 }
