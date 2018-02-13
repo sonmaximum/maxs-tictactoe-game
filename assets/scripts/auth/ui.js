@@ -18,10 +18,10 @@ const signInSuccess = function (data) {
   $('.init').css('visibility', 'visible')
   $('.board, .instructions').css('visibility', 'hidden')
   $('.maincontent').css('display', 'flex')
-  $('.hideloggedin').hide()
+  $('.hidewhenloggedin').hide()
   $('#username').text(data.user.email)
   $('#sign-in-form').find('input:not([type="submit"])').val('')
-  // $('#sign-in-success').modal('show')
+  // $('#sign-in-success').modal('show')  Don't need to show modal as interface changes on signin
 }
 
 const signInFailure = function (error) {
@@ -42,7 +42,7 @@ const changePasswordFailure = function (error) {
 }
 const signOutSuccess = function () {
   $('#logout-success').modal('show')
-  $('.hideloggedin').show()
+  $('.hidewhenloggedin').show()
   $('.init, .board, .instructions, .user-feedback-message').css('visibility', 'hidden')
   $('.maincontent').css('display', 'none')
   store.user = null

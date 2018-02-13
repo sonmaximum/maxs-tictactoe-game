@@ -68,6 +68,12 @@ footer {
   vertical-align: center;
 }
 
+.bottomright {
+  bottom: 80px;
+  position: absolute;
+  width: 100%;
+}
+
 .blue-x {
   color: $darkblue;
 }
@@ -159,12 +165,6 @@ footer {
   right: 0;
   top: 0;
   width: 20%;
-}
-
-.botright {
-  bottom: 80px;
-  position: absolute;
-  width: 100%;
 }
 
 .statbox {

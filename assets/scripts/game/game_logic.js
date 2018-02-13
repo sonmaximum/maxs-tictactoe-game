@@ -40,7 +40,7 @@ const checkForWinO = function (board) {
 }
 
 const boardFull = function (gameboard) {
-  return gameboard.every(elem => elem)
+  return gameboard.every(elem => elem) // every element "truthy" means no spaces empty
 }
 
 const o = 'O'

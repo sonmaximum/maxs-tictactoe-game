@@ -15,7 +15,7 @@ const onMove = function (event) {
     $('#game-over-modal').modal('show')
     return
   }
-  if ($(event.target).text()) {
+  if ($(event.target).text()) { // move is invalid if a token is already in that space
     validmove = false
   }
   ui.updateBoard(event.target)
@@ -24,27 +24,27 @@ const onMove = function (event) {
   api.updateGame(event.target.id)
     .then(state.onUpdateSuccess)
     .catch(state.onUpdateFailure)
-    .then(getComplete)
+    .then(getComplete) // update stats
     .then(getGamesWon)
-    .then(takeAImove)
-    .then(function () { validmove = true })
+    .then(takeAImove) // computer's turn
+    .then(function () { validmove = true }) // reset move variable
 }
 
 const takeAImove = function () {
-  if (logic.checks.vsai) {
-    if (validmove) {
-      if (!logic.boardFull(logic.gameboard)) {
+  if (logic.checks.vsai) { // if playing vs a computer
+    if (validmove) { // if player made a valid move
+      if (!logic.boardFull(logic.gameboard)) { // if there are still spots to play
         logic.checks.aiturn = true
         while (logic.checks.aiturn) {
-          aimove = Math.floor(Math.random() * 9)
-          if (!logic.gameboard[aimove]) {
+          aimove = Math.floor(Math.random() * 9) // get random board index
+          if (!logic.gameboard[aimove]) { // if that space is free
             ui.updateBoard($('#' + aimove))
             logic.takeTurn(aimove, logic.gameboard)
             logic.checkForWin(logic.gameboard)
             api.updateGame(aimove)
               .then(state.onUpdateSuccess)
               .catch(state.onUpdateFailure)
-              .then(getComplete)
+              .then(getComplete) // update stats
               .then(getGamesWon)
             logic.checks.aiturn = false
           }
@@ -90,15 +90,14 @@ const onNewNoAIGame = function (event) {
 
 const onNewGame = function (event) {
   event.preventDefault()
-  $('.board').removeClass('init')
   logic.checks.xturn = true
   logic.checks.over = false
-  $('.space').text('').removeClass().addClass('space')
+  $('.space').text('').removeClass().addClass('space') // reset board visuals
   logic.gameboard = logic.emptygameboard.slice()
   api.createGame()
     .then(state.onCreateGameSuccess)
     .catch(state.onCreateGameFailure)
-    .then(getAll)
+    .then(getAll) // update stats
 }
 
 const addHandlers = () => {

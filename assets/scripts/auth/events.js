@@ -21,7 +21,7 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
-    .then(gameEvents.getAll)
+    .then(gameEvents.getAll) // update stats on signin
     .then(gameEvents.getComplete)
     .then(gameEvents.getGamesWon)
 }

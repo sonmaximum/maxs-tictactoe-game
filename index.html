@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
     <head>
       <title>Max's Tic-Tac-Toe Game</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,13 +12,14 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
 
+    <body class="container-fluid">
 
       <div class="headerbox">
         <h1>Max's Tic-Tac-Toe Game</h1>
       </div>
-      <section class="signinmaincontent hideloggedin">
+
+      <section class="signinmaincontent hidewhenloggedin">
         <section class="signinbox">
           <button type="button" class="btn btn-primary loggedoutbuttons btn-block" data-toggle="modal" data-target="#sign-in-modal">
             Log In To Play!
@@ -28,6 +30,8 @@
           </button>
         </section>
       </section>
+
+      <!-- beginning  of modals -->
 
       <div class="modal fade" id="game-type-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-sm" role="document">
@@ -319,10 +323,11 @@
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
 
+      <!-- end of modals -->
 
       <section class="maincontent">
 
-        <div class="board init ">
+        <div class="board">
           <div class="space" id=0></div>
           <div class="space" id=1></div>
           <div class="space" id=2></div>
@@ -352,7 +357,8 @@
               Start New Game!
             </button>
           </form>
-          <div class="botright">
+
+          <div class="bottomright">
             <div class="statbox">
               <p>Games Played: <span id="played"></span></p>
               <p>Games Completed: <span id="completed"></span></p>

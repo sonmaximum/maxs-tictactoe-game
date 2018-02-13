@@ -6,9 +6,7 @@ const onCreateGameSuccess = function (response) {
   store.game = response.game
   $('#user-feedback-message').text('Currently: X\'s turn')
   $('#user-feedback-message').css('background-color', 'white')
-  $('.board').css('visibility', 'visible')
-  $('.instructions').css('visibility', 'visible')
-  $('.user-feedback-message').css('visibility', 'visible')
+  $('.board, .instructions, .user-feedback-message').css('visibility', 'visible')
 }
 
 const onCreateGameFailure = function (error) {
