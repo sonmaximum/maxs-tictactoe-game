@@ -1,4 +1,4 @@
-This project uses JavaScript (primarily) along with HTML, CSS, and a few shell scripts, and makes use of jQuery, AJAX, bootstrap (especially modals), and SASS.  
+This project is built with JavaScript (primarily) along with HTML, CSS, and a few shell scripts, and makes use of jQuery, AJAX, bootstrap (especially modals), and SASS.  
 
 This was my first real JavaScript project, so it was a real learning experience for me, but I feel that the material in the General Assembly trainings prepared me for it well.  
 
