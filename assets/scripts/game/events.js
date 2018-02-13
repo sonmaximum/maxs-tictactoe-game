@@ -82,6 +82,12 @@ const onNewAIGame = function (event) {
   onNewGame(event)
 }
 
+const onNewNoAIGame = function (event) {
+  event.preventDefault()
+  logic.checks.vsai = false
+  onNewGame(event)
+}
+
 const onNewGame = function (event) {
   event.preventDefault()
   $('.board').removeClass('init')
@@ -98,7 +104,7 @@ const onNewGame = function (event) {
 const addHandlers = () => {
   $('.space').on('click', onMove)
   $('#game-over-form').on('submit', onGameSelector)
-  $('#game-type-noai-form').on('submit', onNewGame)
+  $('#game-type-noai-form').on('submit', onNewNoAIGame)
   $('#game-type-ai-form').on('submit', onNewAIGame)
 }
 
