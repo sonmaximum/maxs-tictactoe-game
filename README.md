@@ -10,7 +10,7 @@ This was my first real JavaScript project, so it was a real learning experience 
 
 I began with [user stories](/assets/userstories.md) and [wireframes](/assets/wireframe.jpg) to guide the experience and design, respectively.
 
-I first coded the basic game logic (outputting the results to the console for feedback). I then implemented user authentication, browser UI, and game state authentication, in that order. Finally I ensured that the elements displayed to the users are appropriate for the given state of the application, and then attempted to style the UI.
+I first coded the basic game logic (outputting the results to the console for feedback). I then implemented user API authentication, browser UI, and game state API authentication, in that order. Finally I ensured that the elements displayed to the users are appropriate for the given state of the application, and then attempted to style the UI.  For each respective feature, I checked out a new branch from master, completed coding, checked and tested on localhost, merged back into master branch, pushed, and deployed.
 
 # Wins
 
