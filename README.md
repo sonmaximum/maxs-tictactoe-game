@@ -18,13 +18,15 @@ Some things about the project that I'm proud of include the cleanness and simpli
 
 # Challenges
 
-The three biggest challenges I faced were:
+The biggest challenges I faced were:
 
 1. The styling, which I mostly just accomplished by trial and error.
 
 2. Making sure the game state in the UI, in the local javascript logic, and in the API were in sync, since these features were implemented separately. Diligent use of console logging and checking the state of each at various points of play were helpful for this.
 
 3. Resetting game state upon new game. There was some issue with the gameboard in the logic or in the API not updating along with the UI on subsequent games (likely a result of not being properly synced, as in (2.) above), which was solved by explicitly passing the state of the current game board in to each respective function.
+
+4. Ensuring that actions that relied on the result of an API call occured after the API call response is received.  I became very familiar with using `.then()` for this purpose.
 
 # Future Directions
 
